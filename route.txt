@@ -1,0 +1,22 @@
++--------+-----------+--------------------------+------------------+------------------------------------------------------------+------------------------------------------+
+| Domain | Method    | URI                      | Name             | Action                                                     | Middleware                               |
++--------+-----------+--------------------------+------------------+------------------------------------------------------------+------------------------------------------+
+|        | GET|HEAD  | /                        |                  | Closure                                                    | web                                      |
+|        | GET|HEAD  | api/user                 |                  | Closure                                                    | api                                      |
+|        |           |                          |                  |                                                            | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | category                 | category.index   | App\Http\Controllers\ProductCategoryController@index       | web                                      |
+|        | POST      | category                 | category.store   | App\Http\Controllers\ProductCategoryController@store       | web                                      |
+|        | GET|HEAD  | category/create          | category.create  | App\Http\Controllers\ProductCategoryController@create      | web                                      |
+|        | PUT|PATCH | category/{category}      | category.update  | App\Http\Controllers\ProductCategoryController@update      | web                                      |
+|        | GET|HEAD  | category/{category}      | category.show    | App\Http\Controllers\ProductCategoryController@show        | web                                      |
+|        | DELETE    | category/{category}      | category.destroy | App\Http\Controllers\ProductCategoryController@destroy     | web                                      |
+|        | GET|HEAD  | category/{category}/edit | category.edit    | App\Http\Controllers\ProductCategoryController@edit        | web                                      |
+|        | GET|HEAD  | product                  | product.index    | App\Http\Controllers\ProductController@index               | web                                      |
+|        | POST      | product                  | product.store    | App\Http\Controllers\ProductController@store               | web                                      |
+|        | GET|HEAD  | product/create           | product.create   | App\Http\Controllers\ProductController@create              | web                                      |
+|        | PUT|PATCH | product/{product}        | product.update   | App\Http\Controllers\ProductController@update              | web                                      |
+|        | DELETE    | product/{product}        | product.destroy  | App\Http\Controllers\ProductController@destroy             | web                                      |
+|        | GET|HEAD  | product/{product}        | product.show     | App\Http\Controllers\ProductController@show                | web                                      |
+|        | GET|HEAD  | product/{product}/edit   | product.edit     | App\Http\Controllers\ProductController@edit                | web                                      |
+|        | GET|HEAD  | sanctum/csrf-cookie      |                  | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                      |
++--------+-----------+--------------------------+------------------+------------------------------------------------------------+------------------------------------------+
